@@ -24,15 +24,26 @@ En la seccion del codigo ";Painting Priorities" puedes cambiar que pinturas vaya
 Por defecto, estan asi:
 
 Priority1=painting_treasure
+
 Priority2=painting_exploration
+
 Priority3=painting_combatred
+
 Priority4=painting_combatorange
+
 Priority5=painting_combatgreen
+
 Priority6=painting_onslaught
+
 Priority7=painting_restoration
+
 Priority8=painting_portal
+
 Priority9=painting_portal2
+
 Priority0=painting_boss
+
 Priority10=painting_boss2
 
-Al cambiar 
+Al cambiar el orden de estas, cambiaremos cuales seran los cuadros que abriremos. Por ejemplo, si buscamos terminar rapido el laberinto, por puntos u otra cosa, ponemos como prioridad alta (2 o 3) el paintint_portal y el painting_boss, asi cuando aparezca esa pintura, la vaya a elegir y avanzaremos mas rapido en el tema.
+Con la configuracion actual, y un equipo que logre derrotar a los jefes en menos de 3 minutos (tiempo real), este script logra pasar el laberinto de 20 niveles en aproximadamente 5 horas. Tomando la ruta mas larga, peleando la mayor cantidad de veces y abriendo todas las pinturas de exploracion.
