@@ -13,12 +13,12 @@ SendMode Input ;More reliable sending mode
 ;Change the numbers to change the order
 ;Remove "painting_boss" if you want to choose a different team for the boss battle
 Priority1=painting_treasure
-Priority3=painting_combatred
 Priority2=painting_exploration
-Priority6=painting_onslaught
-Priority7=painting_restoration
+Priority3=painting_combatred
 Priority4=painting_combatorange
 Priority5=painting_combatgreen
+Priority6=painting_onslaught
+Priority7=painting_restoration
 Priority8=painting_portal
 Priority9=painting_portal2
 Priority0=painting_boss
@@ -149,6 +149,12 @@ Loop
 			Gosub, ClickOnFoundImage
 			Sleep 1000
 			}
+;	ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\chest3.png
+		If (ErrorLevel = 0) ; tercer cofre
+			{
+			Gosub, ClickOnFoundImage
+			Sleep 1000
+			}			
 	ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\go.png
 	If (ErrorLevel = 0)
 		{
