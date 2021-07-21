@@ -76,13 +76,46 @@ Loop
 	ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\treasureroom.png
 	If (ErrorLevel = 0) ;Tesoro, apretar el cofre del medio
 		{
+		Loop, 5
+		{
 		ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\chest.png
 			If (ErrorLevel = 0)
 				{
 				Gosub, ClickOnFoundImage
-				Sleep 1000
+				Sleep 2000
 				}
+		ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\open.png
+			If (ErrorLevel = 0) ; confirmacion cofre
+				{
+				Gosub, ClickOnFoundImage
+				Sleep 2000
 				}
+		ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\chest2.png
+			If (ErrorLevel = 0) ; segundo cofre
+				{
+				Gosub, ClickOnFoundImage
+				Sleep 2000
+				}
+;		ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\chest3.png
+			If (ErrorLevel = 0) ; tercer cofre
+				{
+				Gosub, ClickOnFoundImage
+				Sleep 2000
+				}	
+;anular la siguiente linea para cancelar la confirmacion del uso de las llaves
+		ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\key conf.png
+			If (ErrorLevel = 0)
+			{
+				ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\key.png
+				If (ErrorLevel = 0)
+				{
+				Gosub, ClickOnFoundImage
+				Sleep 2000
+				}
+			}
+		
+		}
+		}
 		ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\bok.png
 	If (ErrorLevel = 0) ;ok cafe
 		{
@@ -101,29 +134,12 @@ Loop
 		Gosub, ClickOnFoundImage
 		Sleep 1000
 		}
-	ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\open.png
-	If (ErrorLevel = 0) ; confirmacion cofre
-		{
-		Gosub, ClickOnFoundImage
-		Sleep 1000
-		}
 	ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\exploring.png
 	If (ErrorLevel = 0)
 		{
 		Gosub, ClickOnFoundImage
 		Sleep 1000
 		}
-;anular la siguiente linea para cancelar la confirmacion del uso de las llaves
-	ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\key conf.png
-	If (ErrorLevel = 0)
-		{
-		ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\key.png
-			If (ErrorLevel = 0)
-				{
-				Gosub, ClickOnFoundImage
-				Sleep 1000
-				}
-			}
 
 	ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\enterdungeon.png
 	If (ErrorLevel = 0)
@@ -143,18 +159,6 @@ Loop
 		Gosub, ClickOnFoundImage
 		Sleep 1000
 		}
-	ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\chest2.png
-		If (ErrorLevel = 0) ; segundo cofre
-			{
-			Gosub, ClickOnFoundImage
-			Sleep 1000
-			}
-;	ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\chest3.png
-		If (ErrorLevel = 0) ; tercer cofre
-			{
-			Gosub, ClickOnFoundImage
-			Sleep 1000
-			}			
 	ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\go.png
 	If (ErrorLevel = 0)
 		{
