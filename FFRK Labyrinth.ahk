@@ -261,7 +261,54 @@ Loop
 		Gosub, ClickOnFoundImage
 		Sleep 1000
 		}
-	}
+	ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\open.png
+			If (ErrorLevel = 0) ; confirmacion cofre
+				{
+				Gosub, ClickOnFoundImage
+				Sleep 2000
+				}
+	
+		ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\battle.png
+			If (ErrorLevel = 0)
+			{
+				ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\resume.png
+				If (ErrorLevel = 0)
+				{
+				Gosub, ClickOnFoundImage
+				Sleep 2000
+				}
+			}
+		ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\pause.png
+			If (ErrorLevel = 0)
+			{
+				ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\auto.png
+				If (ErrorLevel = 0)
+				{
+				Gosub, ClickOnFoundImage
+				Sleep 2000
+				}
+}
+		ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\defeat.png
+			If (ErrorLevel = 0)
+			{
+			Loop 10
+{
+				ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\restart.png
+				If (ErrorLevel = 0)
+				{
+				Gosub, ClickOnFoundImage
+				Sleep 4000
+				}
+				ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\restart2.png
+				If (ErrorLevel = 0)
+				{
+				Gosub, ClickOnFoundImage
+				Sleep 3000
+				}
+
+}
+}
+}
 Return
 
 
