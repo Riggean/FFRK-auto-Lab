@@ -369,88 +369,110 @@ PaintingPriority:
 	If (ErrorLevel = 0)
 		{
 		Gosub, ClickOnFoundImage
-		Sleep 1000
+		Sleep 1500
 		Gosub, ClickOnFoundImage
-		Sleep 1000
+		Sleep 1500
+		Gosub, ClickOnFoundImage
+		Sleep 1500
 		}
 	ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\%Priority2%.png
 	If (ErrorLevel = 0)
 		{
 		Gosub, ClickOnFoundImage
-		Sleep 1000
+		Sleep 1500
 		Gosub, ClickOnFoundImage
-		Sleep 1000
+		Sleep 1500
+		Gosub, ClickOnFoundImage
+		Sleep 1500
 		}
 	ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\%Priority3%.png
 	If (ErrorLevel = 0)
 		{
 		Gosub, ClickOnFoundImage
-		Sleep 1000
+		Sleep 1500
 		Gosub, ClickOnFoundImage
-		Sleep 1000
+		Sleep 1500
+		Gosub, ClickOnFoundImage
+		Sleep 1500
 		}
 	ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\%Priority4%.png
 	If (ErrorLevel = 0)
 		{
 		Gosub, ClickOnFoundImage
-		Sleep 1000
+		Sleep 1500
 		Gosub, ClickOnFoundImage
-		Sleep 1000
+		Sleep 1500
+		Gosub, ClickOnFoundImage
+		Sleep 1500
 		}
 	ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\%Priority5%.png
 	If (ErrorLevel = 0)
 		{
 		Gosub, ClickOnFoundImage
-		Sleep 1000
+		Sleep 1500
 		Gosub, ClickOnFoundImage
-		Sleep 1000
+		Sleep 1500
+		Gosub, ClickOnFoundImage
+		Sleep 1500
 		}
 	ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\%Priority6%.png
 	If (ErrorLevel = 0)
 		{
 		Gosub, ClickOnFoundImage
-		Sleep 1000
+		Sleep 1500
 		Gosub, ClickOnFoundImage
-		Sleep 1000
+		Sleep 1500
+		Gosub, ClickOnFoundImage
+		Sleep 1500
 		}
 	ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\%Priority7%.png
 	If (ErrorLevel = 0)
 		{
 		Gosub, ClickOnFoundImage
-		Sleep 1000
+		Sleep 1500
 		Gosub, ClickOnFoundImage
-		Sleep 1000
+		Sleep 1500
+		Gosub, ClickOnFoundImage
+		Sleep 1500
 		}
 	ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\%Priority8%.png
 	If (ErrorLevel = 0)
 		{
 		Gosub, ClickOnFoundImage
-		Sleep 1000
+		Sleep 1500
 		Gosub, ClickOnFoundImage
-		Sleep 1000
+		Sleep 1500
+		Gosub, ClickOnFoundImage
+		Sleep 1500
 		}
 	ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\%Priority9%.png
 	If (ErrorLevel = 0)
 		{
 		Gosub, ClickOnFoundImage
-		Sleep 1000
+		Sleep 1500
 		Gosub, ClickOnFoundImage
-		Sleep 1000
+		Sleep 1500
+		Gosub, ClickOnFoundImage
+		Sleep 1500
 		}
 	ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\%Priority0%.png
 	If (ErrorLevel = 0)
 		{
 		Gosub, ClickOnFoundImage
-		Sleep 1000
+		Sleep 1500
 		Gosub, ClickOnFoundImage
-		Sleep 1000
+		Sleep 1500
+		Gosub, ClickOnFoundImage
+		Sleep 1500
 		}
 	ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\%Priority10%.png
 	If (ErrorLevel = 0)
 		{
 		Gosub, ClickOnFoundImage
-		Sleep 1000
+		Sleep 1500
 		Gosub, ClickOnFoundImage
-		Sleep 1000
+		Sleep 1500
+		Gosub, ClickOnFoundImage
+		Sleep 1500
 		}
 Return
