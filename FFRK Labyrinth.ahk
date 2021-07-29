@@ -28,7 +28,7 @@ TheAlarm=F:\Alarm01.wav
 
 ReturnMouse=yes ;Returns the mouse to the position it was at before clicking on the emulator
 OpenSealedDoor=yes
-
+OpenChests=1
 
 Pause ;Script begins paused
 Gosub, TheMainLoop
@@ -75,11 +75,13 @@ Loop
 		}	
 	ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\treasureroom.png
 	If (ErrorLevel = 0) ;Tesoro, apretar el cofre del medio
+	{
+	If (OpenChests="1")
 		{
 		Loop, 5
-		{
+			{
 		ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\chest.png
-			If (ErrorLevel = 0)
+				If (ErrorLevel = 0)
 				{
 				Gosub, ClickOnFoundImage
 				Sleep 2000
@@ -90,33 +92,85 @@ Loop
 				Gosub, ClickOnFoundImage
 				Sleep 2000
 				}
-		ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\chest2.png
-			If (ErrorLevel = 0) ; segundo cofre
-				{
-				Gosub, ClickOnFoundImage
-				Sleep 2000
-				}
-;		ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\chest3.png
-			If (ErrorLevel = 0) ; tercer cofre
-				{
-				Gosub, ClickOnFoundImage
-				Sleep 2000
-				}	
-;anular la siguiente linea para cancelar la confirmacion del uso de las llaves
-		ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\key conf.png
-			If (ErrorLevel = 0)
+			}
+		}
+	If (OpenChests="2")
+		{
+		Loop, 5
 			{
-				ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\key.png
+			ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\chest.png
 				If (ErrorLevel = 0)
 				{
 				Gosub, ClickOnFoundImage
 				Sleep 2000
 				}
+			ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\open.png
+				If (ErrorLevel = 0) ; confirmacion cofre
+				{
+				Gosub, ClickOnFoundImage
+				Sleep 2000
+				}
+			ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\chest2.png
+				If (ErrorLevel = 0) ; segundo cofre
+				{
+				Gosub, ClickOnFoundImage
+				Sleep 2000
+				}
+			ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\key conf.png
+				If (ErrorLevel = 0)
+				{
+				ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\key.png
+					If (ErrorLevel = 0)
+					{
+					Gosub, ClickOnFoundImage
+					Sleep 2000
+					}
+				}
 			}
+		}
+	If (OpenChests="3")
+		{
+		Loop, 10
+			{
+			ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\chest.png
+				If (ErrorLevel = 0)
+				{
+				Gosub, ClickOnFoundImage
+				Sleep 2000
+				}
+			ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\open.png
+				If (ErrorLevel = 0) ; confirmacion cofre
+				{
+				Gosub, ClickOnFoundImage
+				Sleep 2000
+				}
+			ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\chest2.png
+				If (ErrorLevel = 0) ; segundo cofre
+				{
+				Gosub, ClickOnFoundImage
+				Sleep 2000
+				}
+			ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\chest3.png
+				If (ErrorLevel = 0) ; tercer cofre
+				{
+				Gosub, ClickOnFoundImage
+				Sleep 2000
+				}	
+			ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\key conf.png
+				If (ErrorLevel = 0)
+				{
+				ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\key.png
+					If (ErrorLevel = 0)
+					{
+					Gosub, ClickOnFoundImage
+					Sleep 2000
+					}
+				}
+			}
+		}
+	}
 		
-		}
-		}
-		ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\bok.png
+	ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\bok.png
 	If (ErrorLevel = 0) ;ok cafe
 		{
 		Gosub, ClickOnFoundImage
@@ -262,37 +316,36 @@ Loop
 		Sleep 1000
 		}
 	ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\open.png
-			If (ErrorLevel = 0) ; confirmacion cofre
-				{
-				Gosub, ClickOnFoundImage
-				Sleep 2000
-				}
-	
-		ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\battle.png
+		If (ErrorLevel = 0) ; confirmacion cofre
+		{
+		Gosub, ClickOnFoundImage
+		Sleep 2000
+		}
+	ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\battle.png
+		If (ErrorLevel = 0)
+		{
+			ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\resume.png
 			If (ErrorLevel = 0)
 			{
-				ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\resume.png
-				If (ErrorLevel = 0)
-				{
-				Gosub, ClickOnFoundImage
-				Sleep 2000
-				}
+			Gosub, ClickOnFoundImage
+			Sleep 2000
 			}
-		ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\pause.png
+		}
+	ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\pause.png
+		If (ErrorLevel = 0)
+		{
+			ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\auto.png
 			If (ErrorLevel = 0)
 			{
-				ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\auto.png
-				If (ErrorLevel = 0)
-				{
-				Gosub, ClickOnFoundImage
-				Sleep 2000
-				}
-}
-		ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\defeat.png
-			If (ErrorLevel = 0)
+			Gosub, ClickOnFoundImage
+			Sleep 2000
+			}
+		}
+	ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\defeat.png
+		If (ErrorLevel = 0)
+		{
+		Loop 10
 			{
-			Loop 10
-{
 				ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\restart.png
 				If (ErrorLevel = 0)
 				{
@@ -305,10 +358,9 @@ Loop
 				Gosub, ClickOnFoundImage
 				Sleep 3000
 				}
-
-}
-}
-}
+			}
+		}
+	}
 Return
 
 
