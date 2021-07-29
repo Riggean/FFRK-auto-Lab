@@ -17,7 +17,18 @@ Requisitos:
 
 Puedes hacer cambios en el script, editando FFRK Labyrinth.ahk con el block de notas.
 
-Notas de esta version. Esto esta en full auto, lo que significa que, una vez esten todas las imagenes, esto volvera a entrar en el mismo laberinto una vez finalizado. Cuando encuentre un tesoro, abrira en orden la cantidad de cofres que tu elijas por codigo. Por defecto, esta solo 1, pero puedes dejarlo en 2 o 3 cofres si tienes las llaves (las tendras).
+Notas de esta version. Esto esta en full auto, lo que significa que, una vez esten todas las imagenes, esto volvera a entrar en el mismo laberinto una vez finalizado. Cuando encuentre un tesoro, abrira en orden la cantidad de cofres que tu elijas por codigo.
+
+En las lineas 30 y 31, encontraran lo siguiente:
+
+OpenSealedDoor=yes
+
+OpenChests=1
+
+El primero, es para abrir Sealed Doors. Si lo dejan en Yes, abrira todas las puertas en su camino. Si buscas avanzar rapido, y evitar combates innecesarios (tienen supuestamente un 25% de chance de HE), ponen No
+
+El segundo, OpenChests, elige la cantidad de cofres que van a abrir. 1 por defecto, pero pueden dejarlo en 0 para que suene una alarma (y desactive el full auto, no lo recomiendo), tambien 2 y 3. Para que abra mas cofres. Mientras mas abra, mas llaves consumira.
+
 
 En la seccion del codigo ";Painting Priorities" puedes cambiar que pinturas vaya a elegir.
 
