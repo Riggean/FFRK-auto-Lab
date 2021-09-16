@@ -28,7 +28,7 @@ TheAlarm=F:\Alarm01.wav
 
 ReturnMouse=yes ;Returns the mouse to the position it was at before clicking on the emulator
 OpenSealedDoor=yes
-OpenChests=1
+OpenChests=2
 
 Pause ;Script begins paused
 Gosub, TheMainLoop
@@ -359,6 +359,12 @@ Loop
 				Sleep 3000
 				}
 			}
+		}
+	ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\crash1.png
+		If (ErrorLevel = 0) ; mensaje error (varia segun emulador)
+		{
+		Gosub, ClickOnFoundImage
+		Sleep 2000
 		}
 	}
 Return
