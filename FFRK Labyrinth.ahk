@@ -14,11 +14,11 @@ SendMode Input ;More reliable sending mode
 ;Remove "painting_boss" if you want to choose a different team for the boss battle
 Priority1=painting_treasure
 Priority2=painting_exploration
-Priority3=painting_combatred
+Priority5=painting_combatred
 Priority4=painting_combatorange
-Priority5=painting_combatgreen
-Priority6=painting_onslaught
-Priority7=painting_restoration
+Priority3=painting_combatgreen
+Priority7=painting_onslaught
+Priority6=painting_restoration
 Priority8=painting_portal
 Priority9=painting_portal2
 Priority0=painting_boss
@@ -28,7 +28,7 @@ TheAlarm=F:\Alarm01.wav
 
 ReturnMouse=yes ;Returns the mouse to the position it was at before clicking on the emulator
 OpenSealedDoor=yes
-OpenChests=2
+OpenChests=1
 
 Pause ;Script begins paused
 Gosub, TheMainLoop
@@ -194,15 +194,23 @@ Loop
 		Gosub, ClickOnFoundImage
 		Sleep 1000
 		}
-
 	ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\enterdungeon.png
+	If (ErrorLevel = 0) 
+		;Labrynth level select screen
+		{
+		Gosub, ClickOnFoundImage
+		Sleep 1000
+		}
+	ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\2enter.png
 	If (ErrorLevel = 0)
+		;Party select screen
 		{
 		Gosub, ClickOnFoundImage
 		Sleep 1000
 		}
 	ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *80 %A_ScriptDir%\images\senterdungeon.png
 	If (ErrorLevel = 0)
+		;Combat painting screen
 		{
 		Gosub, ClickOnFoundImage
 		Sleep 1000
